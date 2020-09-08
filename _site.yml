@@ -1,4 +1,4 @@
-name: "my-website"
+name: "my-lovely-website"
 navbar:
   title: "My Lovely Website"
   left:
@@ -6,9 +6,9 @@ navbar:
       href: index.html
     - text: "About This Page"
       href: about.html
-      output_dir: "docs"
       output:
       html_document:
       theme: cosmo         # https://bookdown.org/yihui/rmarkdown/
       highlight: textmate  #   html-document.html#appearance-and-style
       css: styles.css      # Create your own custom CSS file
+output_dir: "docs"
