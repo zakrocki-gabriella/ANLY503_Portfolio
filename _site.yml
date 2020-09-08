@@ -1,8 +1,8 @@
 name: "my-website"
 navbar:
-  title: "My Website"
+  title: "My Lovely Website"
   left:
-    - text: "WELCOME Home"
+    - text: "Home"
       href: index.html
     - text: "About This Page"
       href: about.html
