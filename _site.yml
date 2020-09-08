@@ -2,9 +2,9 @@ name: "my-website"
 navbar:
   title: "My Website"
   left:
-    - text: "Home"
+    - text: "WELCOME Home"
       href: index.html
-    - text: "About"
+    - text: "About This Page"
       href: about.html
       output_dir: "docs"
       output:
