@@ -1,11 +1,15 @@
 name: "my-lovely-website"
 navbar:
-  title: "My Lovely Website"
+  title: "My Lovely ANLY503 Website"
   left:
     - text: "Home"
       href: index.html
-    - text: "About This Page"
+    - text: "Homework 5"
       href: about.html
+    - text: "Homework 7"
+      href: hw7.html
+    - text: "Final Project"
+      href: final.html
       output:
       html_document:
       theme: cosmo         # https://bookdown.org/yihui/rmarkdown/

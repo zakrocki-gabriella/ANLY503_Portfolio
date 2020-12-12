@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Homework 7</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">My Lovely ANLY503 Website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">Homework 5</a>
+</li>
+<li>
+  <a href="hw7.html">Homework 7</a>
+</li>
+<li>
+  <a href="final.html">Final Project</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="manual.html">Manual</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Homework 7</h1>
+
+</div>
+
+
+<pre class="r"><code>library(tidyverse)
+library(readxl)
+library(dplyr)
+
+getwd()</code></pre>
+<pre><code>## [1] &quot;/Users/gabriellazakrocki/Desktop/ANLY503_fall/ANLY503_Portfolio/anly503-fall2020-a7-zakrocki-gabriella_copy&quot;</code></pre>
+<pre class="r"><code>migs &lt;- read_xls(&quot;data/State_to_State_Migrations_Table_2018.xls&quot;, sheet = &quot;Table&quot;, cell_rows(6:78))</code></pre>
+<pre><code>## New names:
+## * `Current residence in` -&gt; `Current residence in...1`
+## * `` -&gt; ...3
+## * `` -&gt; ...5
+## * `` -&gt; ...7
+## * `` -&gt; ...9
+## * ...</code></pre>
+<p>Will be looking at New York, Texas, Washington, and Colorado as origin states and then will show the relative numbers of people that moved to the top 10 destination states (current state, in the data set).</p>
+<pre class="r"><code>#  New York data gathering
+# want columns : &quot;Current residence in...78&quot; and  &quot;...81&quot; 
+
+ny &lt;- migs %&gt;% 
+  select(&quot;Current residence in...78&quot;, &quot;...81&quot;)
+colnames(ny) &lt;- c(&quot;target&quot;, &quot;ppl_count&quot;)
+ny$ppl_count &lt;- as.numeric(ny$ppl_count)</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre class="r"><code>ny &lt;- ny[-(1:5), , drop = FALSE] %&gt;%
+  drop_na() %&gt;%
+  top_n(10, ppl_count) # choosing the top 10 destination states from NY
+
+ny_final &lt;- data.frame(append(ny, c(source = &#39;NY&#39;), after = 0)) # creating a source column </code></pre>
+<pre class="r"><code># Texas data gathering 
+# want columns : &quot;Current residence in...100&quot; and &quot;...105&quot;  
+
+texas &lt;- migs %&gt;% 
+  select(&quot;Current residence in...100&quot;, &quot;...105&quot;)
+colnames(texas) &lt;- c(&quot;target&quot;, &quot;ppl_count&quot;)
+texas$ppl_count &lt;- as.numeric(texas$ppl_count)</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre class="r"><code>texas &lt;- texas[-(1:5), , drop = FALSE] %&gt;%
+  drop_na() %&gt;%
+  top_n(10, ppl_count) # choosing the top 10 destination states from TX
+
+texas_final &lt;- data.frame(append(ny, c(source = &#39;TX&#39;), after = 0)) # creating a source column </code></pre>
+<pre class="r"><code># Colorado data gathering
+# Want columns : &quot;Current residence in...12&quot; and &quot;...21&quot; 
+
+colo &lt;- migs %&gt;% 
+  select(&quot;Current residence in...12&quot;, &quot;...21&quot;)
+colnames(colo) &lt;- c(&quot;target&quot;, &quot;ppl_count&quot;)
+colo$ppl_count &lt;- as.numeric(colo$ppl_count)</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre class="r"><code>colo &lt;- colo[-(1:5), , drop = FALSE] %&gt;%
+  drop_na() %&gt;%
+  top_n(10, ppl_count) # choosing the top 10 destination states from CO
+
+colo_final &lt;- data.frame(append(colo, c(source = &#39;CO&#39;), after = 0)) # creating a source column </code></pre>
+<pre class="r"><code># Washington data gathering 
+# Want columns : &quot;Current residence in...111&quot; and  &quot;...114&quot; 
+
+wash &lt;- migs %&gt;% 
+  select(&quot;Current residence in...111&quot;, &quot;...114&quot;)
+colnames(wash) &lt;- c(&quot;target&quot;, &quot;ppl_count&quot;)
+wash$ppl_count &lt;- as.numeric(wash$ppl_count)</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre class="r"><code>wash &lt;- wash[-(1:5), , drop = FALSE] %&gt;%
+  drop_na() %&gt;%
+  top_n(10, ppl_count) # choosing the top 10 destination states from WA
+
+wash_final &lt;- data.frame(append(wash, c(source = &#39;WA&#39;), after = 0)) # creating a source column </code></pre>
+<pre class="r"><code># merging all 4 dataframes into one
+networks &lt;- rbind(ny_final, texas_final, colo_final, wash_final)
+networks$target[networks$target == &quot;California&quot;] &lt;- &quot;CA&quot;
+networks$target[networks$target == &quot;Florida&quot;] &lt;- &quot;FL&quot;
+networks$target[networks$target == &quot;Massachusetts&quot;] &lt;- &quot;MA&quot;
+networks$target[networks$target == &quot;Connecticut&quot;] &lt;- &quot;CT&quot;
+networks$target[networks$target == &quot;New Jersey&quot;] &lt;- &quot;NJ&quot;
+networks$target[networks$target == &quot;Missouri&quot;] &lt;- &quot;MO&quot;
+networks$target[networks$target == &quot;Pennsylvania&quot;] &lt;- &quot;PA&quot;
+networks$target[networks$target == &quot;South Carolina&quot;] &lt;- &quot;SC&quot;
+networks$target[networks$target == &quot;Virginia&quot;] &lt;- &quot;VA&quot;
+networks$target[networks$target == &quot;Arizona&quot;] &lt;- &quot;AZ&quot;
+networks$target[networks$target == &quot;New Mexico&quot;] &lt;- &quot;NM&quot;
+networks$target[networks$target == &quot;Tennessee&quot;] &lt;- &quot;TN&quot;
+networks$target[networks$target == &quot;Wyoming&quot;] &lt;- &quot;WY&quot;
+networks$target[networks$target == &quot;Idaho&quot;] &lt;- &quot;ID&quot;
+networks$target[networks$target == &quot;Oregon&quot;] &lt;- &quot;OR&quot;
+networks$target[networks$target == &quot;Utah&quot;] &lt;- &quot;UT&quot;
+networks$target[networks$target == &quot;Texas&quot;] &lt;- &quot;TX&quot;
+networks$target[networks$target == &quot;Washington&quot;] &lt;- &quot;WA&quot;
+networks$target[networks$target == &quot;North Carolina&quot;] &lt;- &quot;NC&quot;
+networks$target[networks$target == &quot;Colorado&quot;] &lt;- &quot;CO&quot;</code></pre>
+<pre class="r"><code>library(igraph)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;igraph&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
+## 
+##     as_data_frame, groups, union</code></pre>
+<pre><code>## The following objects are masked from &#39;package:purrr&#39;:
+## 
+##     compose, simplify</code></pre>
+<pre><code>## The following object is masked from &#39;package:tidyr&#39;:
+## 
+##     crossing</code></pre>
+<pre><code>## The following object is masked from &#39;package:tibble&#39;:
+## 
+##     as_data_frame</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     decompose, spectrum</code></pre>
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     union</code></pre>
+<pre class="r"><code>library(ggraph)
+
+g1 &lt;-  graph_from_data_frame(d = networks, vertices = unique(c(networks$source, networks$target)), directed = TRUE)
+plot(g1)</code></pre>
+<p><img src="hw7_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>library(viridis)</code></pre>
+<pre><code>## Loading required package: viridisLite</code></pre>
+<pre class="r"><code>library(patchwork)
+library(hrbrthemes)</code></pre>
+<pre><code>## NOTE: Either Arial Narrow or Roboto Condensed fonts are required to use these themes.</code></pre>
+<pre><code>##       Please use hrbrthemes::import_roboto_condensed() to install Roboto Condensed and</code></pre>
+<pre><code>##       if Arial Narrow is not on your system, please see https://bit.ly/arialnarrow</code></pre>
+<pre class="r"><code>library(circlize)</code></pre>
+<pre><code>## ========================================
+## circlize version 0.4.11
+## CRAN page: https://cran.r-project.org/package=circlize
+## Github page: https://github.com/jokergoo/circlize
+## Documentation: https://jokergoo.github.io/circlize_book/book/
+## 
+## If you use it in published research, please cite:
+## Gu, Z. circlize implements and enhances circular visualization
+##   in R. Bioinformatics 2014.
+## 
+## This message can be suppressed by:
+##   suppressPackageStartupMessages(library(circlize))
+## ========================================</code></pre>
+<pre><code>## 
+## Attaching package: &#39;circlize&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:igraph&#39;:
+## 
+##     degree</code></pre>
+<pre class="r"><code>library(chorddiag)
+
+circos.clear()
+circos.par(start.degree = 90, gap.degree = 5, track.margin = c(-0.4, 0.4), points.overflow.warning = FALSE)
+par(cex = 5, mar = rep(0, 4))
+
+# color palette</code></pre>
+<pre class="r"><code># Base plot
+col_mat = rand_color(length(networks), transparency = 0.5)
+
+chordDiagram(networks, annotationTrack = c(&quot;name&quot;, &quot;grid&quot;), col = c( &quot;#ffc0cb&quot;, &quot;#6c362c&quot;, &quot;#0bc1aa&quot;) )
+title(main = &quot;State to State Migration from Texas, New York, Colorado, and Washington&quot;)</code></pre>
+<p><img src="hw7_files/figure-html/fig4-1.png" width="672" /></p>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

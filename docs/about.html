@@ -11,7 +11,7 @@
 
 
 
-<title>About This Website</title>
+<title>Homework 5</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,6 +22,17 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -267,7 +278,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">My Lovely Website</a>
+      <a class="navbar-brand" href="index.html">My Lovely ANLY503 Website</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -275,11 +286,19 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="about.html">About This Page</a>
+  <a href="about.html">Homework 5</a>
+</li>
+<li>
+  <a href="hw7.html">Homework 7</a>
+</li>
+<li>
+  <a href="final.html">Final Project</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="manual.html">Manual</a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -289,12 +308,208 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About This Website</h1>
+<h1 class="title toc-ignore">Homework 5</h1>
 
 </div>
 
 
-<p>More about this website.</p>
+<p>TASK 1:</p>
+<p>TASK 1: Explore all accounts. Create visualizations that combine these account characteristics: Whether an account has a credit card or not Whether an account has a loan or not The average balance for the account</p>
+<div id="r" class="section level2">
+<h2>R</h2>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   .default = col_double(),
+##   acct_creation_date = col_date(format = &quot;&quot;),
+##   statement_frequency = col_character(),
+##   account_district = col_character(),
+##   loan_date = col_date(format = &quot;&quot;),
+##   loan_status = col_character(),
+##   loan_default = col_logical(),
+##   gender = col_character(),
+##   birth_date = col_date(format = &quot;&quot;),
+##   owner_district = col_character()
+## )
+## ℹ Use `spec()` for the full column specifications.</code></pre>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   id = col_double(),
+##   account_id = col_double(),
+##   date = col_date(format = &quot;&quot;),
+##   type = col_character(),
+##   amount = col_double(),
+##   balance = col_double(),
+##   bank = col_character(),
+##   account = col_double(),
+##   method = col_character(),
+##   category = col_character()
+## )</code></pre>
+<p>want to create a plot where there is a legend with 3 values - has a loan, has a credit card and has both. Then make a scatterplot of their average account balance</p>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<p><img src="about_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="about_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="about_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="about_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="python" class="section level2">
+<h2>PYTHON</h2>
+<pre><code>##    account_id acct_creation_date  ...  birth_date owner_district
+## 0           1         1995-03-24  ...  1970-12-13          Pisek
+## 1           2         1993-02-26  ...  1945-02-04    Hl.m. Praha
+## 2           3         1997-07-07  ...  1956-12-01          Kolin
+## 3           4         1996-02-21  ...  1919-09-22        Pribram
+## 4           5         1997-05-30  ...  1929-01-25  Cesky Krumlov
+## 
+## [5 rows x 64 columns]</code></pre>
+<pre><code>## sys:1: DtypeWarning: Columns (6) have mixed types.Specify dtype option on import or set low_memory=False.</code></pre>
+<pre><code>##    id  account_id        date    type  ...  bank     account         method  category
+## 0   1           1  1995-03-24  credit  ...   NaN         NaN           cash       NaN
+## 1   5           1  1995-04-13  credit  ...    AB  41403269.0  bank transfer       NaN
+## 2   6           1  1995-05-13  credit  ...    AB  41403269.0  bank transfer       NaN
+## 3   7           1  1995-06-13  credit  ...    AB  41403269.0  bank transfer       NaN
+## 4   8           1  1995-07-13  credit  ...    AB  41403269.0  bank transfer       NaN
+## 
+## [5 rows x 10 columns]</code></pre>
+<pre><code>##    account_id acct_creation_date  ... task1   avg_balance
+## 0           1         1995-03-24  ...    cc  15994.079498
+## 1           2         1993-02-26  ...  both  36540.780335
+## 2           3         1997-07-07  ...    cc  26973.529915
+## 3           4         1996-02-21  ...  none  21753.526882
+## 4           5         1997-05-30  ...    cc  25090.023810
+## 
+## [5 rows x 66 columns]</code></pre>
+<p><img src="about_files/figure-html/unnamed-chunk-12-1.png" /><!-- --></p>
+<pre><code>## [Text(0.5, 1.0, &#39;Average Account Balance based on Whether Customer has a Credit Card, Loan, Both or None&#39;), Text(0.5, 0, &#39;&#39;), Text(0, 0.5, &#39;Average Balance&#39;)]</code></pre>
+<p><img src="about_files/figure-html/unnamed-chunk-13-1.png" /><!-- --></p>
+<p>TASK 2: What is the distribution of all loans and what are their characteristics?</p>
+<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   .default = col_double(),
+##   acct_creation_date = col_date(format = &quot;&quot;),
+##   statement_frequency = col_character(),
+##   account_district = col_character(),
+##   loan_date = col_date(format = &quot;&quot;),
+##   loan_status = col_character(),
+##   loan_default = col_logical(),
+##   gender = col_character(),
+##   birth_date = col_date(format = &quot;&quot;),
+##   owner_district = col_character(),
+##   task1 = col_character()
+## )
+## ℹ Use `spec()` for the full column specifications.</code></pre>
+<p><img src="about_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="about_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>TASK 3: Is there a relationship between a good or bad loan and the time between an account is opened and the loan is created? Is there a specific set of accounts that seem to be at higher or lower risk of defaulting?</p>
+<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   .default = col_double(),
+##   acct_creation_date = col_date(format = &quot;&quot;),
+##   statement_frequency = col_character(),
+##   account_district = col_character(),
+##   loan_date = col_date(format = &quot;&quot;),
+##   loan_status = col_character(),
+##   loan_default = col_logical(),
+##   gender = col_character(),
+##   birth_date = col_date(format = &quot;&quot;),
+##   owner_district = col_character(),
+##   task1 = col_character()
+## )
+## ℹ Use `spec()` for the full column specifications.</code></pre>
+<pre><code>## Don&#39;t know how to automatically pick scale for object of type difftime. Defaulting to continuous.</code></pre>
+<p><img src="about_files/figure-html/unnamed-chunk-18-1.png" width="672" /> Does not seem to be any correlation between difference between loan date and account creation date</p>
+<p><img src="about_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="about_files/figure-html/unnamed-chunk-20-1.png" width="672" /> <img src="about_files/figure-html/unnamed-chunk-21-1.png" width="672" /> <img src="about_files/figure-html/unnamed-chunk-22-1.png" width="672" /> <img src="about_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p>We can see there has not really been a distinction between bad loans and days between account created and loan established.</p>
+<pre><code>## Don&#39;t know how to automatically pick scale for object of type difftime. Defaulting to continuous.</code></pre>
+<p><img src="about_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p>Here we can see that an account is more likely to default if their min balance goes in the red (negative).</p>
+<p>TASK 4 : For the account with the highest number of transactions, make a time series line plot for the behavior of the account over time, including all debits and credits, the different methods, and with the different categories.</p>
+<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   .default = col_double(),
+##   acct_creation_date = col_date(format = &quot;&quot;),
+##   statement_frequency = col_character(),
+##   account_district = col_character(),
+##   loan_date = col_date(format = &quot;&quot;),
+##   loan_status = col_character(),
+##   loan_default = col_logical(),
+##   gender = col_character(),
+##   birth_date = col_date(format = &quot;&quot;),
+##   owner_district = col_character(),
+##   task1 = col_character()
+## )
+## ℹ Use `spec()` for the full column specifications.</code></pre>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   id = col_double(),
+##   account_id = col_double(),
+##   date = col_date(format = &quot;&quot;),
+##   type = col_character(),
+##   amount = col_double(),
+##   balance = col_double(),
+##   bank = col_character(),
+##   account = col_double(),
+##   method = col_character(),
+##   category = col_character()
+## )</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## [1] 675</code></pre>
+<p>max number of transactions is 675 which is account id 8261</p>
+<p><img src="about_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="about_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>TASK 5 : Explore the validity of the data for the case whether or not an account has a credit card and whether or not they have associated credit card transactions. Is there anything worth noting?</p>
+<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   .default = col_double(),
+##   acct_creation_date = col_date(format = &quot;&quot;),
+##   statement_frequency = col_character(),
+##   account_district = col_character(),
+##   loan_date = col_date(format = &quot;&quot;),
+##   loan_status = col_character(),
+##   loan_default = col_logical(),
+##   gender = col_character(),
+##   birth_date = col_date(format = &quot;&quot;),
+##   owner_district = col_character(),
+##   task1 = col_character()
+## )
+## ℹ Use `spec()` for the full column specifications.</code></pre>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   id = col_double(),
+##   account_id = col_double(),
+##   date = col_date(format = &quot;&quot;),
+##   type = col_character(),
+##   amount = col_double(),
+##   balance = col_double(),
+##   bank = col_character(),
+##   account = col_double(),
+##   method = col_character(),
+##   category = col_character()
+## )</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## Warning: Removed 1605 rows containing missing values (geom_point).</code></pre>
+<p><img src="about_files/figure-html/unnamed-chunk-32-1.png" width="672" /> Here we can see that there are a few accounts with a credit card that have no transactions, but the more concerning aspect of this plot is that there are a lot more accounts that dont have a credit card yet have credit card transactions…</p>
+</div>
 
 
 
@@ -305,7 +520,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

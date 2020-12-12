@@ -1,9 +1,8 @@
 ---
-title: "My Website"
+title: "Welcome!"
 ---
 
-Hello, Website!
+Hello, visitors! 
+This website is for my class ANLY503 - Data Visualization. The site has two sections. One that focuses on the homework done throughout the course and another that contains the final project. 
 
-For more information about simple R Markdown websites, please read the documentation at https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html.
-
-Please also note that simple R Markdown sites are _not_ based on **blogdown**. They are probably good for websites with only a few Rmd documents. For larger-scale and more sophisticated websites (such as blogs), you may want to use **blogdown** instead: https://github.com/rstudio/blogdown.
+I have omitted Homework 6 due to not submitting it. Homeworks 1-3 were hand drawing assignments which are omitted. Homework 4 was a data wrangling assignment which only outputted csv's, so that is also omitted. Homework 5 and 7 are both visualizations. 

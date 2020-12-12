@@ -1,0 +1,7 @@
+---
+title: "Homework 7"
+---
+
+```{r child = 'anly503-fall2020-a7-zakrocki-gabriella_copy/networks.rmd'}
+```
+
