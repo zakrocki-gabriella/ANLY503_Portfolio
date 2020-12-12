@@ -5,8 +5,7 @@ date: "12/11/2020"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r child = 'anly503-fall2020-project-zakrocki-gabriella_copy/index.rmd'}
 ```
 
 

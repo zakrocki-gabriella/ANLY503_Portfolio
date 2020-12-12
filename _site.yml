@@ -12,7 +12,7 @@ navbar:
       href: final.html
       output:
       html_document:
-      theme: cosmo         # https://bookdown.org/yihui/rmarkdown/
+      theme: united         # https://bookdown.org/yihui/rmarkdown/
       highlight: textmate  #   html-document.html#appearance-and-style
       css: styles.css      # Create your own custom CSS file
   right: 
