@@ -405,12 +405,6 @@ networks$target[networks$target == &quot;Colorado&quot;] &lt;- &quot;CO&quot;</c
 <pre class="r"><code>library(igraph)</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;igraph&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:circlize&#39;:
-## 
-##     degree</code></pre>
-<pre><code>## The following object is masked from &#39;package:plotly&#39;:
-## 
-##     groups</code></pre>
 <pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
 ## 
 ##     as_data_frame, groups, union</code></pre>
@@ -429,20 +423,38 @@ networks$target[networks$target == &quot;Colorado&quot;] &lt;- &quot;CO&quot;</c
 <pre><code>## The following object is masked from &#39;package:base&#39;:
 ## 
 ##     union</code></pre>
-<pre class="r"><code>library(ggraph)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;ggraph&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:sp&#39;:
-## 
-##     geometry</code></pre>
-<pre class="r"><code>g1 &lt;-  graph_from_data_frame(d = networks, vertices = unique(c(networks$source, networks$target)), directed = TRUE)
+<pre class="r"><code>library(ggraph)
+
+g1 &lt;-  graph_from_data_frame(d = networks, vertices = unique(c(networks$source, networks$target)), directed = TRUE)
 plot(g1)</code></pre>
 <p><img src="hw7_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<pre class="r"><code>library(viridis)
-library(patchwork)
-library(hrbrthemes)
-library(circlize)
-library(chorddiag)
+<pre class="r"><code>library(viridis)</code></pre>
+<pre><code>## Loading required package: viridisLite</code></pre>
+<pre class="r"><code>library(patchwork)
+library(hrbrthemes)</code></pre>
+<pre><code>## NOTE: Either Arial Narrow or Roboto Condensed fonts are required to use these themes.</code></pre>
+<pre><code>##       Please use hrbrthemes::import_roboto_condensed() to install Roboto Condensed and</code></pre>
+<pre><code>##       if Arial Narrow is not on your system, please see https://bit.ly/arialnarrow</code></pre>
+<pre class="r"><code>library(circlize)</code></pre>
+<pre><code>## ========================================
+## circlize version 0.4.11
+## CRAN page: https://cran.r-project.org/package=circlize
+## Github page: https://github.com/jokergoo/circlize
+## Documentation: https://jokergoo.github.io/circlize_book/book/
+## 
+## If you use it in published research, please cite:
+## Gu, Z. circlize implements and enhances circular visualization
+##   in R. Bioinformatics 2014.
+## 
+## This message can be suppressed by:
+##   suppressPackageStartupMessages(library(circlize))
+## ========================================</code></pre>
+<pre><code>## 
+## Attaching package: &#39;circlize&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:igraph&#39;:
+## 
+##     degree</code></pre>
+<pre class="r"><code>library(chorddiag)
 
 circos.clear()
 circos.par(start.degree = 90, gap.degree = 5, track.margin = c(-0.4, 0.4), points.overflow.warning = FALSE)
